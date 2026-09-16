@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "userId": 101,
+    "title": "Красивый закат сегодня",
+    "body": "Смотрите, какой потрясающий градиент на небе перед грозой!",
+    "avatarUrl": "https://picsum.photos/seed/user1/150"
+  },
+  {
+    "id": 2,
+    "userId": 102,
+    "title": "Новый кофе-мастер-класс",
+    "body": "Разбираем различия между мытой и натуральной обработкой зерен.",
+    "avatarUrl": "https://picsum.photos/seed/user2/150"
+  },
+  {
+    "id": 3,
+    "userId": 103,
+    "title": "Релиз Kotlin 2.0",
+    "body": "Новый компилятор K2 ускоряет сборку многомодульных проектов в разы.",
+    "avatarUrl": "https://picsum.photos/seed/user3/150"
+  },
+  {
+    "id": 4,
+    "userId": 104,
+    "title": "Архитектура на MVI",
+    "body": "Плюсы однонаправленного потока данных в современных Compose-экранах.",
+    "avatarUrl": "https://picsum.photos/seed/user4/150"
+  },
+  {
+    "id": 5,
+    "userId": 105,
+    "title": "Горный трекинг",
+    "body": "Вышли на маршрут в 5 утра, чтобы застать рассвет над облаками.",
+    "avatarUrl": "https://picsum.photos/seed/user5/150"
+  },
+  {
+    "id": 6,
+    "userId": 106,
+    "title": "Оптимизация Recomposition",
+    "body": "Используйте derivedStateOf и ключи в LazyColumn для стабильного FPS.",
+    "avatarUrl": "https://picsum.photos/seed/user6/150"
+  },
+  {
+    "id": 7,
+    "userId": 107,
+    "title": "Домашняя пицца",
+    "body": "Ферментация теста 48 часов в холодильнике дает идеальные бортики.",
+    "avatarUrl": "https://picsum.photos/seed/user7/150"
+  },
+  {
+    "id": 8,
+    "userId": 108,
+    "title": "Парсинг JSON без рефлексии",
+    "body": "Kotlinx Serialization генерирует код на этапе компиляции, экономя память.",
+    "avatarUrl": "https://picsum.photos/seed/user8/150"
+  }
+]
