@@ -73,7 +73,7 @@ fun TimerScreen() {
                 },
                 shape = RoundedCornerShape(24.dp),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xFF006684) // Сине-зелёный оттенок как на скриншоте
+                    containerColor = Color(0xFF006684)
                 ),
                 modifier = Modifier
                     .wrapContentWidth()

@@ -23,7 +23,6 @@ class CounterForegroundService : Service() {
         private const val CHANNEL_ID = "counter_foreground_channel"
         private const val NOTIFICATION_ID = 101
 
-        // Поток данных для реактивного обновления экрана Compose
         private val _secondsState = MutableStateFlow(0)
         val secondsState = _secondsState.asStateFlow()
 
@@ -42,7 +41,6 @@ class CounterForegroundService : Service() {
         if (timerJob == null) {
             _isRunningState.value = true
 
-            // Запуск сервиса переднего плана с начальным уведомлением
             startForeground(NOTIFICATION_ID, buildNotification(seconds))
 
             timerJob = serviceScope.launch {
@@ -51,7 +49,6 @@ class CounterForegroundService : Service() {
                     seconds++
                     _secondsState.value = seconds
 
-                    // Обновление текста в уведомлении
                     val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
                     notificationManager.notify(NOTIFICATION_ID, buildNotification(seconds))
                 }

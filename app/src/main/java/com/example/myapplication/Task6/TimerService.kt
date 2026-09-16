@@ -30,14 +30,11 @@ class TimerService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         val seconds = intent?.getLongExtra(EXTRA_SECONDS, 0L) ?: 0L
 
-        // Запуск ожидания в отдельном потоке (фоновая корутина)
         serviceScope.launch {
             if (seconds > 0) {
                 delay(seconds * 1000L)
             }
-            // Показ всплывающего уведомления
             showFinishedNotification()
-            // Служба сама останавливает себя
             stopSelf(startId)
         }
 
