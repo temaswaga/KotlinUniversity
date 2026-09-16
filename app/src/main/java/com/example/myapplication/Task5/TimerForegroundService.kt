@@ -16,11 +16,10 @@ class TimerForegroundService : Service() {
     private val CHANNEL_ID = "TimerChannel"
     private val NOTIFICATION_ID = 1
 
-    // Scope для запуска таймера параллельно основному потоку
     private val serviceScope = CoroutineScope(Dispatchers.Default + Job())
 
     override fun onBind(intent: Intent?): IBinder? {
-        return null // Мы не привязываемся к сервису, поэтому возвращаем null
+        return null
     }
 
     override fun onCreate() {
@@ -28,40 +27,34 @@ class TimerForegroundService : Service() {
         createNotificationChannel()
     }
 
-    // Вызывается при старте сервиса через startService / startForegroundService
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        // 1. Обязательный вызов для Foreground Service в течение 5 секунд
         startForeground(NOTIFICATION_ID, buildNotification(0))
 
-        // 2. Запуск таймера
         serviceScope.launch {
             TimerState.seconds.value = 0
             while (isActive) {
-                delay(1000) // Ждем 1 секунду
+                delay(1000)
                 TimerState.seconds.value += 1
 
-                // Обновляем уведомление новым текстом
                 val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
                 manager.notify(NOTIFICATION_ID, buildNotification(TimerState.seconds.value))
             }
         }
 
-        // START_NOT_STICKY означает, что сервис не будет перезапущен системой, если его убьют
         return START_NOT_STICKY
     }
 
-    // Вызывается при остановке сервиса
     override fun onDestroy() {
         super.onDestroy()
-        serviceScope.cancel() // Отменяем таймер
+        serviceScope.cancel()
     }
 
     private fun buildNotification(seconds: Int): Notification {
         return NotificationCompat.Builder(this, CHANNEL_ID)
-            .setSmallIcon(android.R.drawable.ic_dialog_info) // Стандартная иконка
+            .setSmallIcon(android.R.drawable.ic_dialog_info)
             .setContentTitle("Таймер работает")
             .setContentText("Прошло $seconds секунд")
-            .setOngoing(true) // Делает уведомление постоянным (нельзя смахнуть)
+            .setOngoing(true)
             .build()
     }
 
@@ -70,7 +63,7 @@ class TimerForegroundService : Service() {
             val channel = NotificationChannel(
                 CHANNEL_ID,
                 "Таймер",
-                NotificationManager.IMPORTANCE_LOW // LOW, чтобы не пиликало каждую секунду
+                NotificationManager.IMPORTANCE_LOW 
             )
             val manager = getSystemService(NotificationManager::class.java)
             manager.createNotificationChannel(channel)
