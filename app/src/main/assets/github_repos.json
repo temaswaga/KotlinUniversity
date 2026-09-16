@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "full_name": "JetBrains/kotlin",
+    "description": "The Kotlin Programming Language",
+    "stargazers_count": 48000,
+    "language": "Kotlin"
+  },
+  {
+    "id": 2,
+    "full_name": "google/dagger",
+    "description": "A fast dependency injector for Android and Java.",
+    "stargazers_count": 17500,
+    "language": "Java"
+  },
+  {
+    "id": 3,
+    "full_name": "square/retrofit",
+    "description": "A type-safe HTTP client for Android and the JVM",
+    "stargazers_count": 42000,
+    "language": "Kotlin"
+  },
+  {
+    "id": 4,
+    "full_name": "facebook/react-native",
+    "description": "A framework for building native apps with React.",
+    "stargazers_count": 115000,
+    "language": "JavaScript"
+  },
+  {
+    "id": 5,
+    "full_name": "torvalds/linux",
+    "description": "Linux kernel source tree",
+    "stargazers_count": 178000,
+    "language": "C"
+  },
+  {
+    "id": 6,
+    "full_name": "coil-kt/coil",
+    "description": "Image loading for Android backed by Kotlin Coroutines.",
+    "stargazers_count": 10200,
+    "language": "Kotlin"
+  }
+]
