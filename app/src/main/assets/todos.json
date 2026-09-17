@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Купить молоко",
+    "description": "2 литра, обезжиренное",
+    "isCompleted": false
+  },
+  {
+    "title": "Позвонить маме",
+    "description": "Спросить про выходные",
+    "isCompleted": true
+  },
+  {
+    "title": "Сделать ДЗ по Android",
+    "description": "Clean Architecture + Compose",
+    "isCompleted": false
+  }
+]
